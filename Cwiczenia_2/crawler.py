@@ -2,6 +2,7 @@ import requests
 from requests.exceptions import InvalidSchema, ConnectionError
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+from urllib3.exceptions import LocationParseError
 import random
 
 
@@ -14,6 +15,9 @@ def get_links(url):
         return []
     except ConnectionError as err:
         print(f"Connection error: {err}")
+        return []
+    except LocationParseError as err:
+        print(f"Location Parse error: {err}")
         return []
 
     bs = BeautifulSoup(response.text, "html.parser")
@@ -66,7 +70,8 @@ def main():
         # Counting n of total iterations for statistics' purposes
         iterations = iterations + 1
 
-        # Controling how many times given link has been checked (after 10 checks it is deleted from list)
+        # Controling how many times given link has been checked
+        # (after 10 checks it is deleted from list)
         links_checked_dict[website_url] = (
             links_checked_dict[website_url] + 1
             if website_url in links_checked_dict.keys()

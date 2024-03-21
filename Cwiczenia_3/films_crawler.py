@@ -5,6 +5,7 @@ import pandas as pd
 from requests.exceptions import InvalidSchema, ConnectionError
 from urllib3.exceptions import LocationParseError
 from urllib.robotparser import RobotFileParser
+from unidecode import unidecode
 
 
 def check_robots_txt(url: str) -> RobotFileParser:
@@ -111,10 +112,15 @@ def get_rotten_ranking(
     for link, imdb_title in zip(search_links, previous_df.Title):
         bs = get_soup(link, robot_parser)
 
+        imdb_title = unidecode(imdb_title.replace(",", "").replace("-", ""))
+
         candidate_films = bs.select("search-page-media-row")
 
-        for film_text in candidate_films:
-            title = film_text.get_text().strip()
+        for i in range(len(candidate_films)):
+            film_text = candidate_films[i]
+            title = unidecode(
+                film_text.get_text().strip().replace(",", "").replace("-", "")
+            )
 
             if title == imdb_title:
                 try:
@@ -126,6 +132,9 @@ def get_rotten_ranking(
                 rating_list.append(score)
 
                 break
+
+            if i + 1 == len(candidate_films):
+                print("No such film on rotten tomatoes!")
 
     results = save_results(title_list, rating_list, len(title_list))
 

@@ -5,6 +5,7 @@ class Offer:
     colnames = [
         "offer_id",
         "source",
+        "position",
         "min_wage",
         "max_wage",
         "currency",

@@ -30,20 +30,37 @@ class JobOffersCrawler:
 
 
 class PracujCrawler(JobOffersCrawler):
-    url = "https://it.pracuj.pl/praca/krakow;wp?rd=0&et=17%2C4%2C18&sal=1&its=big-data-science"
+    url1 = "https://it.pracuj.pl/praca/krakow;wp?rd=0&et=17%2C4%2C18&sal=1&"
+    url3 = "its=big-data-science"
     classes = {"offer_links": ".c1fljezf > a.core_n194fgoq"}
 
     def get_links(self):
-        bs = super().get_soup(self.url)
-        links_bs = bs.select(self.classes["offer_links"])
-        links = [link["href"] for link in links_bs]
-        print(len(links))
+        pn = 2
+        url = self.url1 + self.url3
+
+        links_all = []
+
+        while 1:
+            bs = super().get_soup(url)
+            links_bs = bs.select(self.classes["offer_links"])
+            links = [link["href"] for link in links_bs]
+            links_all = links_all + links
+
+            if len(links) == 0:
+                break
+            else:
+                url = self.url1 + f"pn={pn}&" + self.url3
+                pn = pn + 1
+
+        links_all = list(set(links_all))
+        print(len(links_all))
 
 
 class JustJoinCrawler(JobOffersCrawler):
     url = "https://justjoin.it/krakow/data/experience-level_junior.mid.senior/with-salary_yes"
     classes = {
         "offer_links": "a.offer_list_offer_link.css-4lqp8g",
+        "position": "h1.css-1u65tlp",
         "wages": ".css-1pavfqb",
         "skill_name": ".MuiTypography-root.MuiTypography-subtitle2.css-x1xnx3",
         "skill_type": ".MuiTypography-root.MuiTypography-subtitle4.css-1wcj8lw",
@@ -58,6 +75,10 @@ class JustJoinCrawler(JobOffersCrawler):
         bs = super().get_soup(self.url)
         links_bs = bs.select(self.classes["offer_links"])
         self.links = [self.base_url + link["href"] for link in links_bs]
+
+    def get_position(self, bs):
+        pos = bs.select(self.classes["position"])[0].get_text()
+        return pos
 
     def get_wages(self, bs):
         wage = bs.select(self.classes["wages"])[0]
@@ -99,15 +120,27 @@ class JustJoinCrawler(JobOffersCrawler):
             ID = ID + 1
 
             source = self.source
+            position = self.get_position(bs)
             min_wage, max_wage, currency = self.get_wages(bs)
             skills = self.get_skills(bs)
             category = self.category
             seniority = self.get_seniority(bs)
 
             results.append(
-                [ID, source, min_wage, max_wage, currency, skills, category, seniority]
+                [
+                    ID,
+                    source,
+                    position,
+                    min_wage,
+                    max_wage,
+                    currency,
+                    skills,
+                    category,
+                    seniority,
+                ]
             )
 
+            # DEBUG
             # if ID == 3:
             #     break
 

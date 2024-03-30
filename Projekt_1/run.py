@@ -1,24 +1,28 @@
-from src.crawlers import PracujCrawler  # , JustJoinCrawler
+from src.crawlers import PracujCrawler, JustJoinCrawler
+from src.offers import Offer
+import os
 
-# from src.offers import Offer
 
-
-# 2h 18min
+# 5h
 def main():
-    pc = PracujCrawler()
+    # If there is a need to rerun the scraping - delete file
+    if not os.path.exists("results/offers.json"):
+        pc = PracujCrawler()
+        pc.get_links()
+        pc.scan_offers()
 
-    pc.get_links()
-    # jjc = JustJoinCrawler()
+        jjc = JustJoinCrawler()
+        jjc.get_links()
+        jjc.scan_offers()
 
-    # jjc.get_links()
+        pc_offers = pc.get_offers()
+        jj_offers_df = jjc.get_offers_df()
 
-    # jjc.scan_offers()
+        df = pc_offers.append_df(jj_offers_df)
 
-    # jjc.o.save_json("results/JustJoin.json")
-
-    # df = Offer().read_json("results/JustJoin.json")
-
-    # print(df.head())
+        pc_offers.save_json("results/offers.json")
+    else:
+        df = Offer().read_json("results/offers.json")
 
 
 if __name__ == "__main__":

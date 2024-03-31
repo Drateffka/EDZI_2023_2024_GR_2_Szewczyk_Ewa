@@ -78,7 +78,7 @@ def save_results_one_json(df1, df2):
 def skills_plotter(skills: pd.DataFrame):
     skills_10 = skills.sort_values("count", ascending=False)[:10]
 
-    plt.figure("Umiejętności", figsize=[10, 7])
+    fig = plt.figure("Umiejętności", figsize=[10, 7])
     ax = sns.barplot(skills_10, x="skill", y="count", palette="blend:#7AB,#EDA")
     ax.set(
         title="10 najbardziej pożądanych umiejętności/technologii",
@@ -89,6 +89,8 @@ def skills_plotter(skills: pd.DataFrame):
 
     plt.show()
 
+    fig.savefig("results/skills.jpg")
+
 
 def positions_plotter(positions: pd.DataFrame):
 
@@ -96,7 +98,7 @@ def positions_plotter(positions: pd.DataFrame):
     maxs = positions["max_wage"]
     pos = positions["position"]
 
-    plt.figure(
+    fig = plt.figure(
         "Stanowiska",
         figsize=[10, 7],
     )
@@ -132,3 +134,5 @@ def positions_plotter(positions: pd.DataFrame):
     plt.xticks(rotation=-10)
     plt.legend(title="Legenda", facecolor="white")
     plt.show()
+
+    fig.savefig("results/stanowiska.jpg")

@@ -57,7 +57,7 @@ def create_tables(cursor):
             mid REAL,
             source_table TEXT, 
             effective_date TEXT, 
-            currency_code TEXT, 
+            currency_code TEXT,
             FOREIGN KEY(currency_code) REFERENCES CurrencyInfo(currency_code)
             )
         """

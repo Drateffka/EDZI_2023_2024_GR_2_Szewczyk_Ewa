@@ -48,7 +48,7 @@ class JobOffersCrawler:
             skills = self.get_skills(bs)
             category = self.category
             seniority = self.get_seniority(bs)
-
+            company = self.get_company(bs)
             results.append(
                 [
                     ID,
@@ -60,10 +60,12 @@ class JobOffersCrawler:
                     skills,
                     category,
                     seniority,
+                    link,
+                    company,
                 ]
             )
 
-            # DEBUG
+            # # DEBUG
             # if ID == 3:
             #     break
 
@@ -74,15 +76,17 @@ class PracujCrawler(JobOffersCrawler):
     url1 = "https://it.pracuj.pl/praca/krakow;wp?rd=0&et=17%2C4%2C18&sal=1&"
     url3 = "its=big-data-science"
     classes = {
-        "offer_links": ".c1fljezf > a.core_n194fgoq",
+        "offer_links": "div.tiles_c1k2agp8 > a.core_n194fgoq",
         "position": "h1",
-        "wage_min": "span.offer-viewZGJhIB",
-        "wage_max": "span.offer-viewYo2KTr",
-        "skill": ".offer-viewfjH4z3",
-        "skill_element": "p.offer-viewU0gxPf",
+        "wages": "div.s1n75vtn",
+        "currency": ".c1d58j13",
+        "skill": "section[data-test='section-technologies-expected']>h3",
+        "skill_element": "section[data-test='section-technologies-expected'] li[data-test='item-technologies-expected']",
         "seniority_section": ".offer-viewdZ0-Ni",
         "seniority": ".offer-viewXo2dpV",
+        "company": "h2[data-test='text-employerName']",
     }
+
     source = "pracuj.pl"
     category = "Big Data/Data Science"
 
@@ -112,38 +116,38 @@ class PracujCrawler(JobOffersCrawler):
         return pos
 
     def get_wages(self, bs):
-        max_wage = bs.select(self.classes["wage_max"])[0].get_text()
-        max_wage = re.sub("[^0-9, ]", "", max_wage)
-        max_wage = (
-            float(float(max_wage.replace(",", ".")) * 168)
-            if "," in max_wage
-            else float(max_wage)
+
+        wage_bs = bs.select(self.classes["wages"])[0].get_text()
+        multiplier = 168 if "," in wage_bs else 1
+
+        wage_list = wage_bs.split("–")
+
+        min_wage = float(
+            float(re.sub("[^0-9, ]", "", wage_list[0]).replace(",", ".")) * multiplier
         )
 
-        min_wage = bs.select(self.classes["wage_min"])
-
-        if len(min_wage) == 0:
-            min_wage = max_wage
-        else:
-            min_wage = re.sub("[^0-9, ]", "", min_wage[0].get_text())
-            min_wage = (
-                float(float(min_wage.replace(",", ".")) * 168)
-                if "," in min_wage
-                else float(min_wage)
+        if len(wage_list) == 2:
+            max_wage = float(
+                float(re.sub("[^0-9, ]", "", wage_list[1]).replace(",", "."))
+                * multiplier
             )
+        else:
+            max_wage = min_wage
 
-        return min_wage, max_wage, "zł"
+        currency = bs.select(self.classes["currency"])[0].get_text()
+
+        return min_wage, max_wage, currency
 
     def get_skills(self, bs):
         skills_text = bs.select(self.classes["skill"])
 
         skills = []
-        for st in skills_text:
-            if st["data-test"] == "section-technologies-expected":
-                skills_elements = st.select(self.classes["skill_element"])
-                for el in skills_elements:
-                    skills.append(el.get_text())
-                break
+
+        if skills_text:
+            lis = bs.select(self.classes["skill_element"])
+
+            for li in lis:
+                skills.append(li.text)
 
         return skills
 
@@ -170,6 +174,16 @@ class PracujCrawler(JobOffersCrawler):
                     seniorities_better
                 )  # Alfabetic order is equal to logical order!
 
+    def get_company(self, bs):
+        company = (
+            bs.select(self.classes["company"])[0]
+            .get_text()
+            .replace("O firmie", "")
+            .replace("About the company", "")
+        )
+
+        return company
+
 
 class JustJoinCrawler(JobOffersCrawler):
     url = "https://justjoin.it/krakow/data/experience-level_junior.mid.senior/with-salary_yes"
@@ -181,6 +195,7 @@ class JustJoinCrawler(JobOffersCrawler):
         "skill_type": ".MuiTypography-root.MuiTypography-subtitle4.css-1wcj8lw",
         "seniority_name": ".css-qyml61",
         "seniority": ".css-15wyzmd",
+        "company": ".css-mbkv7r",
     }
     base_url = "https://justjoin.it"
     source = "justjoin.it"
@@ -223,3 +238,8 @@ class JustJoinCrawler(JobOffersCrawler):
         for sn, s in zip(seniority_name, seniority):
             if sn.string == "Experience":
                 return s.string
+
+    def get_company(self, bs):
+        company = bs.select(self.classes["company"])[0].get_text()
+
+        return company

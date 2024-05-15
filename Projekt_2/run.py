@@ -7,7 +7,7 @@ from src.analisis import (
     skills_plotter,
     positions_plotter,
 )
-from src.database_utils import connect_database, create_tables
+from src.database_utils import connect_database, create_tables, load_data
 import os
 
 
@@ -46,6 +46,7 @@ def main():
     # ********** Project 2 scope **********
     cur, con = connect_database("results/offers_database.db")
     create_tables(cur, con)
+    load_data(df)
 
     con.close()
 

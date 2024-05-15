@@ -12,6 +12,8 @@ class Offer:
         "skills/technologies",
         "category",
         "seniority",
+        "link",
+        "company",
     ]
 
     def __init__(self, data=None):

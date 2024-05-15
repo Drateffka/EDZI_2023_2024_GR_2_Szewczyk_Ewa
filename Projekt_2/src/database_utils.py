@@ -87,3 +87,7 @@ def create_tables(cursor, con):
     )
 
     con.commit()
+
+
+def load_data(df):
+    print(df.head())

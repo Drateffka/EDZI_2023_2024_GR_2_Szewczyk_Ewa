@@ -1,55 +1,103 @@
 [
     {
-        "skill": "Python",
-        "count": 64
-    },
-    {
-        "skill": "Pandas",
-        "count": 3
-    },
-    {
-        "skill": "NumPy",
-        "count": 1
-    },
-    {
-        "skill": "TensorFlow",
-        "count": 4
-    },
-    {
-        "skill": "PyTorch",
-        "count": 3
-    },
-    {
-        "skill": "R",
-        "count": 2
-    },
-    {
-        "skill": "IBM InfoSphere",
-        "count": 1
-    },
-    {
-        "skill": "Power BI",
-        "count": 6
-    },
-    {
         "skill": "Oracle",
         "count": 7
     },
     {
-        "skill": "Apache Spark",
+        "skill": "SQL",
+        "count": 56
+    },
+    {
+        "skill": "Python",
+        "count": 63
+    },
+    {
+        "skill": "Pyspark",
+        "count": 1
+    },
+    {
+        "skill": "Hive",
+        "count": 4
+    },
+    {
+        "skill": "ETL",
+        "count": 11
+    },
+    {
+        "skill": "Unix",
+        "count": 2
+    },
+    {
+        "skill": "Control-M",
+        "count": 1
+    },
+    {
+        "skill": "Microsoft Power BI",
+        "count": 2
+    },
+    {
+        "skill": "BI",
+        "count": 2
+    },
+    {
+        "skill": "SAP",
+        "count": 2
+    },
+    {
+        "skill": "DWH",
+        "count": 3
+    },
+    {
+        "skill": "Databricks",
         "count": 7
     },
     {
-        "skill": "Kubernetes",
+        "skill": "Kafka",
+        "count": 7
+    },
+    {
+        "skill": "Git",
+        "count": 3
+    },
+    {
+        "skill": "Microsoft Azure",
         "count": 8
     },
     {
-        "skill": "MySQL",
-        "count": 2
+        "skill": "Docker",
+        "count": 4
+    },
+    {
+        "skill": "Terraform",
+        "count": 3
+    },
+    {
+        "skill": "Azure DevOps",
+        "count": 1
+    },
+    {
+        "skill": "Java",
+        "count": 10
     },
     {
         "skill": "AWS",
         "count": 20
+    },
+    {
+        "skill": "MongoDB",
+        "count": 3
+    },
+    {
+        "skill": "PostgreSQL",
+        "count": 2
+    },
+    {
+        "skill": "Prometheus",
+        "count": 1
+    },
+    {
+        "skill": "Kubernetes",
+        "count": 8
     },
     {
         "skill": "Pioneer",
@@ -80,52 +128,16 @@
         "count": 1
     },
     {
-        "skill": "Data Science",
+        "skill": "Google Cloud Platform",
         "count": 6
     },
     {
-        "skill": "Data Engineering",
+        "skill": "BigQuery",
         "count": 2
     },
     {
-        "skill": "Data analysis",
-        "count": 2
-    },
-    {
-        "skill": "Data Warehousing",
-        "count": 8
-    },
-    {
-        "skill": "Data Pipelines",
-        "count": 2
-    },
-    {
-        "skill": "Data modeling",
-        "count": 3
-    },
-    {
-        "skill": "English",
-        "count": 16
-    },
-    {
-        "skill": "Polish",
-        "count": 4
-    },
-    {
-        "skill": "VMware",
+        "skill": "Dataflow",
         "count": 1
-    },
-    {
-        "skill": "SQL",
-        "count": 55
-    },
-    {
-        "skill": "Microsoft Azure",
-        "count": 9
-    },
-    {
-        "skill": "SAP",
-        "count": 3
     },
     {
         "skill": "Snowflake Data Cloud",
@@ -136,144 +148,100 @@
         "count": 1
     },
     {
-        "skill": "LLM",
+        "skill": "Spring Boot",
         "count": 1
     },
     {
-        "skill": "ETL",
-        "count": 11
-    },
-    {
-        "skill": "Cosmos DB",
-        "count": 1
+        "skill": "Tableau",
+        "count": 4
     },
     {
         "skill": "PL/SQL",
         "count": 5
     },
     {
-        "skill": "Informatica PowerCenter",
+        "skill": "ServiceNow",
+        "count": 1
+    },
+    {
+        "skill": "Microsoft Excel",
+        "count": 2
+    },
+    {
+        "skill": "SharePoint",
         "count": 1
     },
     {
         "skill": "Microsoft SQL Server",
-        "count": 3
-    },
-    {
-        "skill": "PostgreSQL",
         "count": 2
-    },
-    {
-        "skill": "CI/CD",
-        "count": 6
-    },
-    {
-        "skill": "Data Lake",
-        "count": 2
-    },
-    {
-        "skill": "DWH",
-        "count": 4
-    },
-    {
-        "skill": "ETL/ELT",
-        "count": 1
-    },
-    {
-        "skill": "Java",
-        "count": 11
-    },
-    {
-        "skill": "Kafka",
-        "count": 6
-    },
-    {
-        "skill": "MongoDB",
-        "count": 2
-    },
-    {
-        "skill": "Prometheus",
-        "count": 1
-    },
-    {
-        "skill": "SAP BW",
-        "count": 1
-    },
-    {
-        "skill": "SAP ABAP",
-        "count": 1
-    },
-    {
-        "skill": "Google Cloud Platform",
-        "count": 6
-    },
-    {
-        "skill": "Vertex AI",
-        "count": 1
-    },
-    {
-        "skill": "Bash",
-        "count": 2
-    },
-    {
-        "skill": "Numpy",
-        "count": 1
-    },
-    {
-        "skill": "Jenkins",
-        "count": 1
-    },
-    {
-        "skill": "Ansible",
-        "count": 1
-    },
-    {
-        "skill": "Pyspark",
-        "count": 1
-    },
-    {
-        "skill": "Hive",
-        "count": 4
-    },
-    {
-        "skill": "Unix",
-        "count": 1
-    },
-    {
-        "skill": "Control-M",
-        "count": 1
-    },
-    {
-        "skill": "Spring Boot",
-        "count": 1
-    },
-    {
-        "skill": "Scala",
-        "count": 12
-    },
-    {
-        "skill": "Spark",
-        "count": 16
     },
     {
         "skill": "Hadoop",
-        "count": 11
+        "count": 9
     },
     {
-        "skill": "Big Query",
+        "skill": "Airflow",
+        "count": 7
+    },
+    {
+        "skill": "Hbase",
         "count": 1
     },
     {
-        "skill": "Data Studio",
+        "skill": "GitHub",
         "count": 1
+    },
+    {
+        "skill": "Zendesk",
+        "count": 1
+    },
+    {
+        "skill": "Linux",
+        "count": 3
+    },
+    {
+        "skill": "LLM",
+        "count": 2
+    },
+    {
+        "skill": "Cosmos DB",
+        "count": 1
+    },
+    {
+        "skill": "Apache Spark",
+        "count": 7
+    },
+    {
+        "skill": "Pandas",
+        "count": 3
+    },
+    {
+        "skill": "NumPy",
+        "count": 1
+    },
+    {
+        "skill": "TensorFlow",
+        "count": 4
+    },
+    {
+        "skill": "PyTorch",
+        "count": 3
+    },
+    {
+        "skill": "Langchain",
+        "count": 1
+    },
+    {
+        "skill": "OpenAI",
+        "count": 2
     },
     {
         "skill": "NLP",
-        "count": 2
+        "count": 3
     },
     {
         "skill": "AI",
-        "count": 2
+        "count": 1
     },
     {
         "skill": "scikit-learn",
@@ -316,72 +284,56 @@
         "count": 1
     },
     {
-        "skill": "Microsoft Power BI",
+        "skill": "Vertex AI",
+        "count": 1
+    },
+    {
+        "skill": "Bash",
+        "count": 3
+    },
+    {
+        "skill": "Numpy",
+        "count": 1
+    },
+    {
+        "skill": "Jenkins",
+        "count": 1
+    },
+    {
+        "skill": "Ansible",
+        "count": 1
+    },
+    {
+        "skill": "Scala",
+        "count": 11
+    },
+    {
+        "skill": "Spark",
+        "count": 13
+    },
+    {
+        "skill": "GKE",
+        "count": 1
+    },
+    {
+        "skill": "Big Query",
+        "count": 1
+    },
+    {
+        "skill": "Data Studio",
+        "count": 1
+    },
+    {
+        "skill": "R",
         "count": 2
     },
     {
-        "skill": "Langchain",
+        "skill": "IBM InfoSphere",
         "count": 1
     },
     {
-        "skill": "OpenAI",
-        "count": 2
-    },
-    {
-        "skill": "Databricks",
-        "count": 9
-    },
-    {
-        "skill": "Git",
-        "count": 4
-    },
-    {
-        "skill": "Docker",
-        "count": 5
-    },
-    {
-        "skill": "Terraform",
-        "count": 4
-    },
-    {
-        "skill": "Azure DevOps",
-        "count": 1
-    },
-    {
-        "skill": "BI",
-        "count": 2
-    },
-    {
-        "skill": "LangChain",
-        "count": 1
-    },
-    {
-        "skill": "ServiceNow",
-        "count": 1
-    },
-    {
-        "skill": "Microsoft Excel",
-        "count": 1
-    },
-    {
-        "skill": "SharePoint",
-        "count": 1
-    },
-    {
-        "skill": "Airflow",
+        "skill": "Power BI",
         "count": 6
-    },
-    {
-        "skill": "Hbase",
-        "count": 1
-    },
-    {
-        "skill": "GitHub",
-        "count": 1
-    },
-    {
-        "skill": "Zendesk",
-        "count": 1
     },
     {
         "skill": "Apache Flink",
@@ -392,116 +344,52 @@
         "count": 1
     },
     {
-        "skill": "GKE",
+        "skill": "LangChain",
         "count": 1
     },
     {
-        "skill": "Tableau",
-        "count": 4
-    },
-    {
-        "skill": "BigQuery",
-        "count": 2
-    },
-    {
-        "skill": "Dataflow",
-        "count": 1
-    },
-    {
-        "skill": "Power Apps",
-        "count": 1
-    },
-    {
-        "skill": "Dataverse",
-        "count": 1
-    },
-    {
-        "skill": "Power Platform",
-        "count": 1
-    },
-    {
-        "skill": "Power Automate",
-        "count": 1
-    },
-    {
-        "skill": "Snowflake",
-        "count": 10
-    },
-    {
-        "skill": "Machine Learning",
-        "count": 6
-    },
-    {
-        "skill": "PySpark",
-        "count": 7
-    },
-    {
-        "skill": "Apache Beam",
-        "count": 2
-    },
-    {
-        "skill": "Java/Scala/Python",
-        "count": 2
-    },
-    {
-        "skill": "Kafka/BigQuery/Airflow",
-        "count": 1
-    },
-    {
-        "skill": "AWS / GCP",
-        "count": 2
-    },
-    {
-        "skill": "Computer Vision",
-        "count": 1
-    },
-    {
-        "skill": "MS SQL",
-        "count": 5
-    },
-    {
-        "skill": "ETL tools",
-        "count": 2
-    },
-    {
-        "skill": "SQL Server",
-        "count": 1
-    },
-    {
-        "skill": "Databases",
-        "count": 2
-    },
-    {
-        "skill": "database architecture",
-        "count": 1
-    },
-    {
-        "skill": "Oracle Data Guard",
-        "count": 1
-    },
-    {
-        "skill": "TSQL",
-        "count": 2
-    },
-    {
-        "skill": "Oracle APEX",
-        "count": 1
-    },
-    {
-        "skill": "JavaScript",
-        "count": 1
-    },
-    {
-        "skill": "Dynamic Actions",
-        "count": 1
-    },
-    {
-        "skill": "Azure",
+        "skill": "MySQL",
         "count": 3
     },
     {
-        "skill": "GCP",
-        "count": 5
+        "skill": "VMware",
+        "count": 1
+    },
+    {
+        "skill": "Data Science",
+        "count": 6
+    },
+    {
+        "skill": "Data Engineering",
+        "count": 2
+    },
+    {
+        "skill": "Data analysis",
+        "count": 2
+    },
+    {
+        "skill": "Data Warehousing",
+        "count": 8
+    },
+    {
+        "skill": "Data Pipelines",
+        "count": 2
+    },
+    {
+        "skill": "Data modeling",
+        "count": 4
+    },
+    {
+        "skill": "English",
+        "count": 17
+    },
+    {
+        "skill": "Polish",
+        "count": 4
+    },
+    {
+        "skill": "Informatica PowerCenter",
+        "count": 1
     },
     {
         "skill": "Microsoft BI",
@@ -520,82 +408,6 @@
         "count": 1
     },
     {
-        "skill": "BI systems",
-        "count": 1
-    },
-    {
-        "skill": "Data Query",
-        "count": 1
-    },
-    {
-        "skill": "PubSub",
-        "count": 1
-    },
-    {
-        "skill": "Statistics",
-        "count": 2
-    },
-    {
-        "skill": "NumFOCUS stack",
-        "count": 1
-    },
-    {
-        "skill": "Siebel",
-        "count": 1
-    },
-    {
-        "skill": "REST API",
-        "count": 2
-    },
-    {
-        "skill": "Cloud",
-        "count": 5
-    },
-    {
-        "skill": "Niemiecki",
-        "count": 2
-    },
-    {
-        "skill": "Kotlin",
-        "count": 3
-    },
-    {
-        "skill": "Big Data",
-        "count": 13
-    },
-    {
-        "skill": "PostreSQL",
-        "count": 1
-    },
-    {
-        "skill": "SDLC",
-        "count": 1
-    },
-    {
-        "skill": "SSIS",
-        "count": 4
-    },
-    {
-        "skill": "SSAS",
-        "count": 1
-    },
-    {
-        "skill": "T-SQL",
-        "count": 3
-    },
-    {
-        "skill": "ETL Pipelines",
-        "count": 1
-    },
-    {
-        "skill": "Data",
-        "count": 5
-    },
-    {
-        "skill": "RDBMS",
-        "count": 3
-    },
-    {
         "skill": "Team Player",
         "count": 2
     },
@@ -608,8 +420,24 @@
         "count": 2
     },
     {
+        "skill": "MS SQL",
+        "count": 5
+    },
+    {
         "skill": "Software Architecture",
         "count": 2
+    },
+    {
+        "skill": "Data",
+        "count": 4
+    },
+    {
+        "skill": "RDBMS",
+        "count": 3
+    },
+    {
+        "skill": "Big Data",
+        "count": 10
     },
     {
         "skill": "AWS RDS",
@@ -628,8 +456,36 @@
         "count": 1
     },
     {
-        "skill": "cats",
+        "skill": "Machine Learning",
+        "count": 8
+    },
+    {
+        "skill": "Statistics",
+        "count": 3
+    },
+    {
+        "skill": "LLM Orchestration",
         "count": 1
+    },
+    {
+        "skill": "transformers",
+        "count": 1
+    },
+    {
+        "skill": "Deep Learning",
+        "count": 1
+    },
+    {
+        "skill": "unit tests",
+        "count": 1
+    },
+    {
+        "skill": "CI/CD",
+        "count": 3
+    },
+    {
+        "skill": "ETL tools",
+        "count": 2
     },
     {
         "skill": "Data Mapping",
@@ -640,40 +496,48 @@
         "count": 1
     },
     {
-        "skill": "aws cloud",
+        "skill": "presentation skills",
         "count": 1
     },
     {
-        "skill": "PhyTorch",
+        "skill": "Communication Skills",
         "count": 1
+    },
+    {
+        "skill": "Analytical skills",
+        "count": 2
+    },
+    {
+        "skill": "SPSS",
+        "count": 1
+    },
+    {
+        "skill": "PySpark",
+        "count": 6
     },
     {
         "skill": "Design Patterns",
         "count": 1
     },
     {
-        "skill": "DynamoDB",
+        "skill": "T-SQL",
+        "count": 3
+    },
+    {
+        "skill": "MS Azure",
         "count": 1
     },
     {
-        "skill": "Data Lakehouse",
-        "count": 1
+        "skill": "Snowflake",
+        "count": 11
     },
     {
-        "skill": "Data Factory",
-        "count": 1
+        "skill": "Cloud",
+        "count": 4
     },
     {
-        "skill": "Unity Catalogue",
-        "count": 1
-    },
-    {
-        "skill": "Angielski",
-        "count": 1
-    },
-    {
-        "skill": "OLAP",
-        "count": 2
+        "skill": "GCP",
+        "count": 4
     },
     {
         "skill": "Analytics",
@@ -696,44 +560,64 @@
         "count": 1
     },
     {
+        "skill": "SSIS",
+        "count": 4
+    },
+    {
         "skill": "Powershell",
+        "count": 1
+    },
+    {
+        "skill": "rag",
+        "count": 1
+    },
+    {
+        "skill": "Data Lake",
+        "count": 1
+    },
+    {
+        "skill": "Microsoft Azure Cloud",
+        "count": 1
+    },
+    {
+        "skill": "Java/Scala/Python",
         "count": 2
     },
     {
-        "skill": "MDS",
+        "skill": "Apache Beam",
+        "count": 2
+    },
+    {
+        "skill": "AWS / GCP",
+        "count": 2
+    },
+    {
+        "skill": "PubSub",
         "count": 1
     },
     {
-        "skill": "Linux",
+        "skill": "Google Cloud",
         "count": 1
     },
     {
-        "skill": "MDM",
+        "skill": "data analytics",
         "count": 1
     },
     {
-        "skill": "presentation skills",
+        "skill": "Analyzing data",
         "count": 1
     },
     {
-        "skill": "Communication Skills",
-        "count": 1
-    },
-    {
-        "skill": "Analytical skills",
-        "count": 1
-    },
-    {
-        "skill": "SPSS",
-        "count": 1
-    },
-    {
-        "skill": "MS Azure",
+        "skill": "PhyTorch",
         "count": 1
     },
     {
         "skill": "DBMS",
         "count": 1
+    },
+    {
+        "skill": "OLAP",
+        "count": 2
     },
     {
         "skill": "SSRS",
@@ -752,7 +636,195 @@
         "count": 1
     },
     {
+        "skill": "PL/pgSQL",
+        "count": 1
+    },
+    {
+        "skill": "GraphQL",
+        "count": 1
+    },
+    {
+        "skill": "API Design",
+        "count": 1
+    },
+    {
+        "skill": "Hasura",
+        "count": 1
+    },
+    {
+        "skill": "makefile",
+        "count": 1
+    },
+    {
+        "skill": "Niemiecki",
+        "count": 2
+    },
+    {
+        "skill": "Kotlin",
+        "count": 2
+    },
+    {
+        "skill": "TSQL",
+        "count": 2
+    },
+    {
+        "skill": "MDS",
+        "count": 1
+    },
+    {
+        "skill": "Azure",
+        "count": 3
+    },
+    {
+        "skill": "Testing",
+        "count": 1
+    },
+    {
+        "skill": "Microsoft 365",
+        "count": 1
+    },
+    {
+        "skill": "Business Analysis",
+        "count": 1
+    },
+    {
+        "skill": "Agile",
+        "count": 1
+    },
+    {
+        "skill": "DevOps tools",
+        "count": 1
+    },
+    {
+        "skill": "Web Applications",
+        "count": 1
+    },
+    {
+        "skill": "Continuous Delivery",
+        "count": 1
+    },
+    {
+        "skill": "Continuous Integration",
+        "count": 1
+    },
+    {
+        "skill": "Databases",
+        "count": 3
+    },
+    {
+        "skill": "Networking",
+        "count": 1
+    },
+    {
+        "skill": "PostreSQL",
+        "count": 2
+    },
+    {
+        "skill": "MDM",
+        "count": 1
+    },
+    {
+        "skill": "ETL Pipelines",
+        "count": 1
+    },
+    {
+        "skill": "Java / Python",
+        "count": 1
+    },
+    {
+        "skill": "Apache Kafka",
+        "count": 1
+    },
+    {
+        "skill": "Analytical Thinking",
+        "count": 1
+    },
+    {
+        "skill": "DevOps",
+        "count": 1
+    },
+    {
         "skill": "DBT",
+        "count": 1
+    },
+    {
+        "skill": "Power Apps",
+        "count": 1
+    },
+    {
+        "skill": "Dataverse",
+        "count": 1
+    },
+    {
+        "skill": "Power Platform",
+        "count": 1
+    },
+    {
+        "skill": "Power Automate",
+        "count": 1
+    },
+    {
+        "skill": "Computer Vision",
+        "count": 1
+    },
+    {
+        "skill": "Kafka/BigQuery/Airflow",
+        "count": 1
+    },
+    {
+        "skill": "SQL Server",
+        "count": 1
+    },
+    {
+        "skill": "database architecture",
+        "count": 1
+    },
+    {
+        "skill": "Oracle Data Guard",
+        "count": 1
+    },
+    {
+        "skill": "Oracle APEX",
+        "count": 1
+    },
+    {
+        "skill": "JavaScript",
+        "count": 1
+    },
+    {
+        "skill": "Dynamic Actions",
+        "count": 1
+    },
+    {
+        "skill": "BI systems",
+        "count": 1
+    },
+    {
+        "skill": "Data Query",
+        "count": 1
+    },
+    {
+        "skill": "NumFOCUS stack",
+        "count": 1
+    },
+    {
+        "skill": "Siebel",
+        "count": 1
+    },
+    {
+        "skill": "REST API",
+        "count": 1
+    },
+    {
+        "skill": "SDLC",
+        "count": 1
+    },
+    {
+        "skill": "SSAS",
+        "count": 1
+    },
+    {
+        "skill": "DynamoDB",
         "count": 1
     },
     {
@@ -784,132 +856,59 @@
         "count": 1
     },
     {
-        "skill": "Google Cloud",
-        "count": 1
-    },
-    {
-        "skill": "API",
-        "count": 1
-    },
-    {
-        "skill": "Swagger",
-        "count": 1
-    },
-    {
-        "skill": "C#",
-        "count": 1
-    },
-    {
-        "skill": "Fluent Bit",
-        "count": 1
-    },
-    {
-        "skill": "Go Lang",
-        "count": 1
-    },
-    {
-        "skill": "Open Telemetry",
-        "count": 1
-    },
-    {
-        "skill": "GitHub Actions",
-        "count": 1
-    },
-    {
-        "skill": "Agile",
-        "count": 1
-    },
-    {
-        "skill": "ML",
-        "count": 1
-    },
-    {
-        "skill": "SaaS",
-        "count": 1
-    },
-    {
-        "skill": "ccpa",
-        "count": 1
-    },
-    {
-        "skill": "GDPR",
-        "count": 1
-    },
-    {
-        "skill": "Java / Python",
-        "count": 1
-    },
-    {
-        "skill": "Apache Kafka",
-        "count": 1
-    },
-    {
-        "skill": "LLM Orchestration",
-        "count": 1
-    },
-    {
-        "skill": "transformers",
-        "count": 1
-    },
-    {
-        "skill": "Deep Learning",
-        "count": 1
-    },
-    {
-        "skill": "unit tests",
-        "count": 1
-    },
-    {
-        "skill": "Microsoft Azure Cloud",
-        "count": 1
-    },
-    {
         "position": "Data Analyst",
         "count": 1,
-        "min_wage": 12000.0,
-        "max_wage": 17000.0,
+        "min_wage": 12000,
+        "max_wage": 17000,
         "mean_wage": 14500.0
     },
     {
         "position": "Data Engineer",
-        "count": 13,
-        "min_wage": 7000.0,
-        "max_wage": 30240.0,
-        "mean_wage": 20174.6153846154
+        "count": 11,
+        "min_wage": 7000,
+        "max_wage": 30240,
+        "mean_wage": 20842.7272727273
     },
     {
         "position": "Data Scientist",
         "count": 3,
-        "min_wage": 9000.0,
-        "max_wage": 30240.0,
-        "mean_wage": 20774.6666666667
+        "min_wage": 9000,
+        "max_wage": 30240,
+        "mean_wage": 20722.1666666667
+    },
+    {
+        "position": "Junior Data Analyst",
+        "count": 1,
+        "min_wage": 5250,
+        "max_wage": 5250,
+        "mean_wage": 5250.0
     },
     {
         "position": "Senior Data Analyst",
         "count": 1,
-        "min_wage": 15000.0,
-        "max_wage": 17500.0,
+        "min_wage": 15000,
+        "max_wage": 17500,
         "mean_wage": 16250.0
     },
     {
         "position": "Senior Data Architect",
         "count": 1,
-        "min_wage": 22000.0,
-        "max_wage": 28000.0,
+        "min_wage": 22000,
+        "max_wage": 28000,
         "mean_wage": 25000.0
     },
     {
         "position": "Senior Data Engineer",
-        "count": 12,
-        "min_wage": 20000.0,
-        "max_wage": 37551.0,
-        "mean_wage": 27922.4583333333
+        "count": 10,
+        "min_wage": 20000,
+        "max_wage": 37586,
+        "mean_wage": 28344.8
     },
     {
         "position": "Senior Data Scientist",
-        "count": 1,
-        "min_wage": 28500.0,
-        "max_wage": 37000.0,
-        "mean_wage": 32750.0
+        "count": 2,
+        "min_wage": 25200,
+        "max_wage": 37000,
+        "mean_wage": 31915.0
     }
 ]

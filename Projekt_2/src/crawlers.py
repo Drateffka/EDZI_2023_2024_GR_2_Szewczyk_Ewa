@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 from requests.exceptions import InvalidSchema, ConnectionError
 from urllib3.exceptions import LocationParseError
 import re
+from summarizer import Summarizer
+import warnings
 
 ID = 0
 
@@ -32,6 +34,35 @@ class JobOffersCrawler:
 
         return bs
 
+    def get_address(self, company):
+        base_url = "https://nominatim.openstreetmap.org/search"
+
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+        }
+        params = {"q": company, "format": "json", "addressdetails": 1}
+
+        response = requests.get(base_url, params=params, headers=headers)
+        data = response.json()
+
+        if data:
+
+            location = data[0]["display_name"]
+            return location
+        else:
+            return None
+
+    def summarize_text(self, text):
+        s = Summarizer()
+
+        with warnings.catch_warnings(
+            action="ignore"
+        ):  # User warning about memory leakage, known to community, can be somehow fixed,
+            # but I don't want to mess up my environmental variables
+            summary = s(text, min_length=50, max_length=150)
+
+        return summary
+
     def scan_offers(self):
 
         results = []
@@ -49,6 +80,8 @@ class JobOffersCrawler:
             category = self.category
             seniority = self.get_seniority(bs)
             company = self.get_company(bs)
+            company_address = self.get_address(company)
+            description = self.get_description(bs)
             results.append(
                 [
                     ID,
@@ -62,10 +95,12 @@ class JobOffersCrawler:
                     seniority,
                     link,
                     company,
+                    company_address,
+                    description,
                 ]
             )
 
-            # # DEBUG
+            # DEBUG
             # if ID == 3:
             #     break
 
@@ -85,6 +120,15 @@ class PracujCrawler(JobOffersCrawler):
         "seniority_section": ".offer-viewdZ0-Ni",
         "seniority": ".offer-viewXo2dpV",
         "company": "h2[data-test='text-employerName']",
+        "description_ids": [
+            "about-project-1",
+            "responsibilities-1",
+            "requirements-1",
+            "work-organization-1",
+            "training-space-1",
+            "offered-1",
+            "benefits-1",
+        ],
     }
 
     source = "pracuj.pl"
@@ -184,6 +228,19 @@ class PracujCrawler(JobOffersCrawler):
 
         return company
 
+    def get_description(self, bs):
+        base = "section[data-scroll-id="
+
+        text = ""
+
+        for id in self.classes["description_ids"]:
+            tag = base + id + "]"
+            selected = bs.select(tag)
+            if len(selected) == 1:
+                text = text + selected[0].get_text() + " "
+
+        return self.summarize_text(text)
+
 
 class JustJoinCrawler(JobOffersCrawler):
     url = "https://justjoin.it/krakow/data/experience-level_junior.mid.senior/with-salary_yes"
@@ -196,6 +253,7 @@ class JustJoinCrawler(JobOffersCrawler):
         "seniority_name": ".css-qyml61",
         "seniority": ".css-15wyzmd",
         "company": ".css-mbkv7r",
+        "description": "div.css-6sm4q6",
     }
     base_url = "https://justjoin.it"
     source = "justjoin.it"
@@ -243,3 +301,8 @@ class JustJoinCrawler(JobOffersCrawler):
         company = bs.select(self.classes["company"])[0].get_text()
 
         return company
+
+    def get_description(self, bs):
+        description = bs.select(self.classes["description"])[0].get_text()
+
+        return self.summarize_text(description)

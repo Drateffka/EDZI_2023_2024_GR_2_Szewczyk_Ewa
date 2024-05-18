@@ -1,0 +1,8 @@
+beautifulsoup4==4.12.3
+bert_extractive_summarizer==0.10.1
+matplotlib==3.8.0
+numpy==1.26.4
+pandas==2.2.2
+Requests==2.31.0
+seaborn==0.13.2
+urllib3==2.2.1

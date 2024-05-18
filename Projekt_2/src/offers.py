@@ -14,6 +14,8 @@ class Offer:
         "seniority",
         "link",
         "company",
+        "company_address",
+        "description",
     ]
 
     def __init__(self, data=None):

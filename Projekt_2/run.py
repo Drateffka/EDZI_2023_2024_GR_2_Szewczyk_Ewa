@@ -12,11 +12,8 @@ import os
 
 
 def main():
-
-    # ********** Project 1 scope **********
-
     # Scraping
-    # If there is a need to rerun the scraping - delete file
+    # If there is a need to rerun the scraping - delete the file
     if not os.path.exists("results/offers.json"):
         pc = PracujCrawler()
         pc.get_links()
@@ -43,10 +40,10 @@ def main():
     skills_plotter(skills_count)
     positions_plotter(positions_count)
 
-    # ********** Project 2 scope **********
+    # Database
     cur, con = connect_database("results/offers_database.db")
     create_tables(cur, con)
-    load_data(df)
+    load_data(cur, con, df)
 
     con.close()
 
